@@ -57,6 +57,9 @@ const CharacterSheet = () => {
   return (
     <div>
       <h1>D&D Character Sheet</h1>
+      <text>Save Character saves Locally. To avoid conflicting data from multiple characters/sessions we recommend exporting to PDF.
+      <br/> Unless you like, never need to clear your browsing history & if that's the case, what are you mormon?<br/>
+      </text>
       <form onSubmit={handleSubmit}>
         <label>
           Name:

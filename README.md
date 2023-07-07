@@ -20,6 +20,7 @@ The D&D Companion App is built using the following technologies:
 
 - **React**: A popular JavaScript library for building user interfaces.
 - **ChatGPT API**: An API that provides natural language processing capabilities, allowing for interactive conversations with AI.
+- **dnd5eapi** An open auth API that allows get requests to aggregated data.
 - **Other libraries and tools**: Various other libraries and tools are used to enhance the app's functionality and user experience, such as Redux for state management, React Router for navigation, and Axios for API communication.
 
 ## Getting Started
@@ -56,10 +57,10 @@ This project is licensed under the [MIT License](LICENSE).
 ## Acknowledgements
 
 - The D&D Companion App utilizes the [ChatGPT](https://openai.com) API for generating interactive conversations with AI.
-- The spell data and monster information used in the app are sourced from official D&D publications and community-driven open resources.
+- The spell data and monster information used in the app are sourced from official D&D publications and community-driven open resources including [dnd5eAPI](https://www.dnd5eapi.co/)
 
 ## Contact
 
-If you have any questions, suggestions, or feedback related to the D&D Companion App, you can reach out to the project maintainer at tyjamesramblings@gmail.com.
+If you have any questions, suggestions, or feedback related to the D&D Companion App, you can reach out to the project maintainer at [tyjamesramblings@gmail.com](tyjamesramblings@gmail.com).
 
 Happy adventuring!
