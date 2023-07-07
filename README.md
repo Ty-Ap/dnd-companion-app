@@ -47,7 +47,7 @@ Once you have the D&D Companion App running, you can explore the different featu
 
 ## Contributing
 
-Contributions to the D&D Companion App are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the [GitHub repository](https://github.com/your-username/dnd-companion-app). If you would like to contribute code, feel free to open a pull request following the project's contribution guidelines.
+Contributions to the D&D Companion App are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the [GitHub repository](https://github.com/Ty-Ap/dnd-companion-app). If you would like to contribute code, feel free to open a pull request following the project's contribution guidelines.
 
 ## License
 
@@ -60,6 +60,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-If you have any questions, suggestions, or feedback related to the D&D Companion App, you can reach out to the project maintainer at your-email@example.com.
+If you have any questions, suggestions, or feedback related to the D&D Companion App, you can reach out to the project maintainer at tyjamesramblings@gmail.com.
 
 Happy adventuring!
