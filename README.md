@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# D&D Companion App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![D&D Companion App](app_screenshot.png)
 
-## Available Scripts
+Welcome to the D&D Companion App! This application is designed to assist Dungeons & Dragons (D&D) players in their tabletop adventures by providing a variety of features and functionalities. Whether you're a Dungeon Master (DM) or a player, this app aims to enhance your gaming experience.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Character Sheet**: Create and manage your D&D characters with an interactive character sheet. Track attributes, skills, equipment, and more.
+- **Dice Roller**: Roll dice for various actions in the game, including attacks, saving throws, skill checks, and damage rolls.
+- **Spellbook**: Access a comprehensive spell database, search for spells, and keep track of your character's known spells.
+- **Monster Database**: Look up details about monsters, including their stats, abilities, and lore, to aid in encounters and world-building.
+- **Encounter Manager**: Create and manage encounters, track initiative order, and keep notes during combat.
+- **Campaign Tracker**: Keep track of your ongoing campaigns, including session summaries, NPC details, and plot points.
+- **ChatGPT Integration**: Utilize the power of ChatGPT API to generate interactive and engaging conversations with AI-powered NPCs or to seek assistance with rules and game mechanics.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The D&D Companion App is built using the following technologies:
 
-### `npm test`
+- **React**: A popular JavaScript library for building user interfaces.
+- **ChatGPT API**: An API that provides natural language processing capabilities, allowing for interactive conversations with AI.
+- **Other libraries and tools**: Various other libraries and tools are used to enhance the app's functionality and user experience, such as Redux for state management, React Router for navigation, and Axios for API communication.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+To set up the D&D Companion App locally on your machine, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository: `git clone https://github.com/your-username/dnd-companion-app.git`
+2. Navigate to the project directory: `cd dnd-companion-app`
+3. Install the dependencies: `npm install`
+4. Create a `.env` file in the root directory and add your ChatGPT API key: `REACT_APP_CHATGPT_API_KEY=your-api-key`
+5. Start the development server: `npm start`
+6. Open your browser and visit `http://localhost:3000` to access the app.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once you have the D&D Companion App running, you can explore the different features and functionalities to enhance your D&D gaming experience. Here are a few usage guidelines:
 
-### `npm run eject`
+- **Character Sheet**: Click on the "Character Sheet" option in the navigation bar to create and manage your D&D characters. Fill in the necessary details, such as ability scores, skills, equipment, and more.
+- **Dice Roller**: Use the "Dice Roller" feature to roll dice for various actions during the game. Specify the type and number of dice to roll and see the results instantly.
+- **Spellbook**: Access the "Spellbook" to search for spells and keep track of your character's known spells. Browse through the spell database to find detailed information about each spell.
+- **Monster Database**: Look up details about monsters by accessing the "Monster Database." Search for specific monsters, view their stats and abilities, and utilize the information during encounters.
+- **Encounter Manager**: Create and manage encounters with the "Encounter Manager" feature. Keep track of initiative order, add notes, and manage combat-related information during gameplay.
+- **Campaign Tracker**: Use the "Campaign Tracker" to keep track of ongoing campaigns. Add session summaries, track NPC details, and document plot points to assist with campaign management.
+- **ChatGPT Integration**: Make use of the integrated ChatGPT API to have interactive conversations with AI-powered NPCs or to seek assistance with rules and game mechanics. Engage in dynamic dialogues within the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributions to the D&D Companion App are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the [GitHub repository](https://github.com/your-username/dnd-companion-app). If you would like to contribute code, feel free to open a pull request following the project's contribution guidelines.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project is licensed under the [MIT License](LICENSE).
 
-## Learn More
+## Acknowledgements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The D&D Companion App utilizes the [ChatGPT](https://openai.com) API for generating interactive conversations with AI.
+- The spell data and monster information used in the app are sourced from official D&D publications and community-driven open resources.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contact
 
-### Code Splitting
+If you have any questions, suggestions, or feedback related to the D&D Companion App, you can reach out to the project maintainer at your-email@example.com.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy adventuring!

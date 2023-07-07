@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+//d100
+//d36
+import D20 from "./Components/D20";
+//d12
+import D10 from "./Components/D10";
+import D8 from './Components/D8';
+//d6
+import D4 from './Components/D4';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <D20/>
+      <D10/>
+      <D8/>
+      <D4/>
+    </>
   );
 }
 
