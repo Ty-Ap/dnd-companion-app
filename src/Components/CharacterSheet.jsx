@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import jsPDF from 'jspdf';
 
 const CharacterSheet = () => {
   const [characterData, setCharacterData] = useState({
@@ -28,6 +29,29 @@ const CharacterSheet = () => {
     e.preventDefault();
     // Store character data in local storage
     localStorage.setItem('characterData', JSON.stringify(characterData));
+  };
+
+  const handleClear = () => {
+    setCharacterData({
+      name: '',
+      class: '',
+      level: '',
+      race: '',
+      alignment: '',
+    });
+  };
+
+  const exportToPDF = () => {
+    const doc = new jsPDF();
+  
+    doc.text('D&D Character Sheet', 10, 10);
+    doc.text(`Name: ${characterData.name}`, 10, 20);
+    doc.text(`Class: ${characterData.class}`, 10, 30);
+    doc.text(`Level: ${characterData.level}`, 10, 40);
+    doc.text(`Race: ${characterData.race}`, 10, 50);
+    doc.text(`Alignment: ${characterData.alignment}`, 10, 60);
+  
+    doc.save('character_sheet.pdf');
   };
 
   return (
@@ -121,6 +145,9 @@ const CharacterSheet = () => {
           </select>
         </label>
         <button type="submit">Save Character</button>
+        {/* could also use reset button type below instead of using handleClear function, but I prefer this for clarity. */}
+        <button type="button" onClick={handleClear}>Clear</button>
+        <button type="button" onClick={exportToPDF}>Export to PDF</button>
       </form>
     </div>
   );
