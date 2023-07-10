@@ -1,66 +1,57 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const Spellbook = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [allSpells, setAllSpells] = useState([]);
-  const [filteredSpells, setFilteredSpells] = useState([]);
+  const [spellSearchQuery, setSpellSearchQuery] = useState('');
+  const [selectedSpell, setSelectedSpell] = useState(null);
 
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+    setSpellSearchQuery(e.target.value);
   };
 
-  useEffect(() => {
-    const fetchSpells = async () => {
-      try {
-        const response = await axios.get('https://www.dnd5eapi.co/api/spells');
-        const spells = response.data.results;
-        setAllSpells(spells);
-      } catch (error) {
-        console.error('Error fetching spells:', error);
-      }
-    };
+const handleSearch = async () => {
+  try {
+    const formattedQuery = spellSearchQuery.toLowerCase().replace(/\s/g, '-');
+    const response = await axios.get(
+      `https://www.dnd5eapi.co/api/spells/${formattedQuery}`
+    );
+    const spellData = response.data;
+    setSelectedSpell(spellData);
+  } catch (error) {
+    console.error('Error fetching spell:', error);
+    setSelectedSpell(null);
+  }
+};
 
-    fetchSpells();
-  }, []);
-
-  useEffect(() => {
-    const filterSpells = () => {
-      const filtered = allSpells.filter((spell) =>
-        spell.name.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      setFilteredSpells(filtered);
-    };
-
-    if (searchQuery.trim() === '') {
-      setFilteredSpells([]);
-    } else {
-      filterSpells();
-    }
-  }, [searchQuery, allSpells]);
+const handleKeyPress = (e) => {
+  if (e.key === 'Enter') {
+    handleSearch();
+  }
+};
 
   return (
     <div>
       <h1>Spellbook</h1>
       <input
         type="text"
-        value={searchQuery}
+        value={spellSearchQuery}
         onChange={handleSearchChange}
+        onKeyDown={handleKeyPress}
         placeholder="Search spells..."
       />
-      {searchQuery.trim() !== '' ? (
-        <ul>
-          {filteredSpells.map((spell, index) => (
-            <li key={index}>
-              <h2>{spell.name}</h2>
-              <p>Level: {spell.level}</p>
-              <p>School: {spell.school}</p>
-              {/* Display other spell details */}
-            </li>
-          ))}
-        </ul>
+      <button type="submit" onClick={handleSearch}>
+        Search
+      </button>
+
+      {selectedSpell ? (
+        <div>
+          <h2>{selectedSpell.name}</h2>
+          <p>Level: {selectedSpell.level}</p>
+          <p>School: {selectedSpell.school.name}</p>
+          {/* Display other spell details */}
+        </div>
       ) : (
-        <p>Matching spells appear here</p>
+        <p>No matching spell found.</p>
       )}
     </div>
   );

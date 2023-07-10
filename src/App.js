@@ -8,6 +8,7 @@ import D6 from "./Components/DiceRolls/D6";
 import D4 from './Components/DiceRolls/D4';
 import CharacterSheet from "./Components/CharacterSheet";
 import Spellbook from "./Components/SpellBook";
+import Monsterbook from "./Components/MonsterManual";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 
     <CharacterSheet />
     <Spellbook />
+    <Monsterbook />
     </>
   );
 }
