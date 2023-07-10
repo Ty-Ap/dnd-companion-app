@@ -7,8 +7,9 @@ import D8 from './Components/DiceRolls/D8';
 import D6 from "./Components/DiceRolls/D6";
 import D4 from './Components/DiceRolls/D4';
 import CharacterSheet from "./Components/CharacterSheet";
-import Spellbook from "./Components/SpellBook";
-import Monsterbook from "./Components/MonsterManual";
+import Spellbook from "./Components/SearchBars/SpellBook";
+import Monsterbook from "./Components/SearchBars/MonsterManual";
+import Assistant from "./Components/Assistant";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
     <CharacterSheet />
     <Spellbook />
     <Monsterbook />
+    <Assistant />
     </>
   );
 }
