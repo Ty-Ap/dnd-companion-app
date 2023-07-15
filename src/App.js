@@ -1,34 +1,26 @@
-import D100 from "./Components/DiceRolls/D100";
-import D36 from "./Components/DiceRolls/D36";
-import D20 from "./Components/DiceRolls/D20";
-import D12 from "./Components/DiceRolls/D12";
-import D10 from "./Components/DiceRolls/D10";
-import D8 from './Components/DiceRolls/D8';
-import D6 from "./Components/DiceRolls/D6";
-import D4 from './Components/DiceRolls/D4';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  
 import CharacterSheet from "./Components/CharacterSheet";
 import Spellbook from "./Components/SearchBars/SpellBook";
 import Monsterbook from "./Components/SearchBars/MonsterManual";
 import Assistant from "./Components/Assistant";
+import Layout from './Components/Layout';
+import DiceRolls from './Components/DiceRolls/DicePage';
+import Home from './Components/Home';
 
 
 function App() {
   return (
-    <>
-      <D100 />
-      <D36 />
-      <D20 />
-      <D12 />
-      <D10 />
-      <D8 />
-      <D6 />
-      <D4 />
-
-    <CharacterSheet />
-    <Spellbook />
-    <Monsterbook />
-    <Assistant />
-    </>
+    <Router>
+      <Layout />
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/rolls" element={<DiceRolls/>} />
+        <Route path="/character" element={<CharacterSheet/>} />
+        <Route path="/spell" element={<Spellbook/>} />
+        <Route path="/monster" element={<Monsterbook/>} />
+        <Route path="/assistant" element={<Assistant/>} />
+      </Routes>
+    </Router>
   );
 }
 
