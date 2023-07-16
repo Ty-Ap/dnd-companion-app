@@ -6,6 +6,7 @@ import Assistant from "./Components/Assistant";
 import Layout from './Components/Layout';
 import DiceRolls from './Components/DiceRolls/DicePage';
 import Home from './Components/Home';
+import RandomEncounters from './Components/RandomEncounters';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/spell" element={<Spellbook/>} />
         <Route path="/monster" element={<Monsterbook/>} />
         <Route path="/assistant" element={<Assistant/>} />
+        <Route path="/random-encounters" element={ <RandomEncounters /> } />
       </Routes>
     </Router>
   );

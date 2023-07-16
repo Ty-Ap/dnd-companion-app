@@ -12,6 +12,7 @@ const Layout = () => {
           <li><Link to="/monster">Monster Manual</Link></li>
           <li><Link to="/spell">Spell Book</Link></li>
           <li><Link to="/assistant">Assistant</Link></li>
+          <li><Link to="/random-encounters">Random Encounters</Link></li>
         </ul>
       </nav>
       <Outlet />
