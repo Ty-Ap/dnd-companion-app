@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Configuration, OpenAIApi } from 'openai';
 
 const configuration = new Configuration({
@@ -10,42 +10,6 @@ const Assistant = () => {
   const [chatCompletions, setChatCompletions] = useState([]);
   const [userInput, setUserInput] = useState('');
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const setupOpenAI = async () => {
-      try {
-        const response = await openai.createChatCompletion({
-          model: 'gpt-3.5-turbo',
-          messages: [
-            {
-              role: 'system',
-              content: 'You are a D&D assistant. Do not give examples in responses unless asked by a user to give examples.',
-            },
-          ],
-          temperature: 0.75,
-          max_tokens: 106,
-          top_p: 0.55,
-          frequency_penalty: 2,
-          presence_penalty: 0.5,
-          stop: ['2.'],
-        });
-
-        console.log(response); // Log the response object for debugging
-
-        if (response.data.choices && response.data.choices.length > 0) {
-          const newCompletion = response.data.choices[0].message.content;
-          setChatCompletions((prevCompletions) => [...prevCompletions, newCompletion]);
-        }
-      } catch (error) {
-        console.error('Failed to initialize OpenAI:', error);
-        // Handle the error, e.g., display an error message to the user
-      }
-
-      setLoading(false);
-    };
-
-    setupOpenAI();
-  }, []);
 
   const handleInputChange = (e) => {
     setUserInput(e.target.value);
@@ -84,6 +48,39 @@ const Assistant = () => {
     setUserInput('');
     setLoading(false);
   };
+
+  useEffect(() => {
+    const setupOpenAI = async () => {
+      try {
+        const response = await openai.createChatCompletion({
+          model: 'gpt-3.5-turbo',
+          messages: [
+            { role: 'system', content: 'You are a D&D assistant. Do not give examples in responses unless asked by a user to give examples.' },
+          ],
+          temperature: 0.75,
+          max_tokens: 106,
+          top_p: 0.55,
+          frequency_penalty: 2,
+          presence_penalty: 0.5,
+          stop: ['2.'],
+        });
+
+        console.log(response); // Log the response object for debugging
+
+        if (response.data.choices && response.data.choices.length > 0) {
+          const newCompletion = response.data.choices[0].message.content;
+          setChatCompletions((prevCompletions) => [...prevCompletions, newCompletion]);
+        }
+      } catch (error) {
+        console.error('Failed to initialize OpenAI:', error);
+        // Handle the error, e.g., display an error message to the user
+      }
+
+      setLoading(false);
+    };
+
+    setupOpenAI();
+  }, []);
 
   return (
     <div>
