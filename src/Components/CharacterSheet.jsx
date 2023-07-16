@@ -55,10 +55,10 @@ const CharacterSheet = () => {
   };
 
   return (
-    <div>
+    <div className="character-sheet">
       <h1>D&D Character Sheet</h1>
-      <text>Save Character saves Locally. To avoid conflicting data from multiple characters/sessions we recommend exporting to PDF.
-      <br/> Unless you like, never need to clear your browsing history & if that's the case, what are you mormon?<br/>
+      {/* got annoyed trying to center with scss so used whitespace preserve. will fix later */}
+      <text>                                                                                      Save Character saves Locally. To avoid conflicting data from multiple characters/sessions I recommend exporting to PDF.
       </text>
       <form onSubmit={handleSubmit}>
         <label>
@@ -147,11 +147,14 @@ const CharacterSheet = () => {
             <option value="Chaotic Evil">Chaotic Evil</option>
           </select>
         </label>
-        <button type="submit">Save Character</button>
         {/* could also use reset button type below instead of using handleClear function, but I prefer this for clarity. */}
-        <button type="button" onClick={handleClear}>Clear</button>
-        <button type="button" onClick={exportToPDF}>Export to PDF</button>
+        {/* moved buttons outside of form for styling */}
       </form>
+      <div className="button-container">
+      <button type="submit">Save Character</button>
+      <button type="button" onClick={handleClear}>Clear</button>
+      <button type="button" onClick={exportToPDF}>Export to PDF</button>
+    </div>
     </div>
   );
 };

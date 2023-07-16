@@ -11,7 +11,7 @@ const D8 = () => {
   return (
     <div>
       <form>
-        <button type="button" onClick={D8Roll}>
+        <button type="button" className="button-dice" onClick={D8Roll}>
           D8
         </button>
       </form>
