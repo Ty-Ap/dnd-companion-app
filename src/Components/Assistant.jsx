@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Configuration, OpenAIApi } from 'openai';
 
 const configuration = new Configuration({
@@ -11,10 +11,6 @@ const Assistant = () => {
   const [userInput, setUserInput] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleInputChange = (e) => {
-    setUserInput(e.target.value);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -23,7 +19,7 @@ const Assistant = () => {
       const response = await openai.createChatCompletion({
         model: 'gpt-3.5-turbo',
         messages: [
-          { role: 'system', content: 'You are a D&D assistant. Do not give examples in responses unless asked by a user to give examples.' },
+          { role: 'system', content: 'You are a Dungeons and Dragons assistant. answer prompts following the format of \n \n Answer: \n Details: \n ;' },
           { role: 'user', content: userInput },
         ],
         temperature: 0.75,
@@ -31,7 +27,7 @@ const Assistant = () => {
         top_p: 0.55,
         frequency_penalty: 2,
         presence_penalty: 0.5,
-        stop: ['2.'],
+        stop: [';'],
       });
 
       console.log(response); // Log the response object for debugging
@@ -49,43 +45,51 @@ const Assistant = () => {
     setLoading(false);
   };
 
-  useEffect(() => {
-    const setupOpenAI = async () => {
-      try {
-        const response = await openai.createChatCompletion({
-          model: 'gpt-3.5-turbo',
-          messages: [
-            { role: 'system', content: 'You are a D&D assistant. Do not give examples in responses unless asked by a user to give examples.' },
-          ],
-          temperature: 0.75,
-          max_tokens: 106,
-          top_p: 0.55,
-          frequency_penalty: 2,
-          presence_penalty: 0.5,
-          stop: ['2.'],
-        });
+  const handleInputChange = (e) => {
+    setUserInput(e.target.value);
+  };
 
-        console.log(response); // Log the response object for debugging
+  // useEffect(() => {
+  //   const setupOpenAI = async () => {
+  //     try {
+  //       const response = await openai.createChatCompletion({
+  //         model: 'gpt-3.5-turbo',
+  //         messages: [
+  //           { role: 'system', content: 'You are a D&D assistant. Do not give examples in responses unless asked by a user to give examples.' },
+  //         ],
+  //         temperature: 0.75,
+  //         max_tokens: 106,
+  //         top_p: 0.55,
+  //         frequency_penalty: 2,
+  //         presence_penalty: 0.5,
+  //         stop: ['2.'],
+  //       });
 
-        if (response.data.choices && response.data.choices.length > 0) {
-          const newCompletion = response.data.choices[0].message.content;
-          setChatCompletions((prevCompletions) => [...prevCompletions, newCompletion]);
-        }
-      } catch (error) {
-        console.error('Failed to initialize OpenAI:', error);
-        // Handle the error, e.g., display an error message to the user
-      }
+  //       console.log(response); // Log the response object for debugging
 
-      setLoading(false);
-    };
+  //       if (response.data.choices && response.data.choices.length > 0) {
+  //         const newCompletion = response.data.choices[0].message.content;
+  //         setChatCompletions((prevCompletions) => [...prevCompletions, newCompletion]);
+  //       }
+  //     } catch (error) {
+  //       console.error('Failed to initialize OpenAI:', error);
+  //       // Handle the error, e.g., display an error message to the user
+  //     }
 
-    setupOpenAI();
-  }, []);
+  //     setLoading(false);
+  //   };
+
+  //   setupOpenAI();
+  // }, []);
 
   return (
     <div>
+      <h1>Chat GPT Player Assistant</h1>
+      <p>enter a topic, ask a question etc below. <br/> 
+      NOTE: this functionality may become locked behind role based access control (RBAC) in a future update. Reason being, openAi API use is not free, and I can only keep the functionality public for as long as I have the means to pay usage fees. 
+      </p>
       <div>
-        {chatCompletions.slice(1).map((completion, index) => (
+        {chatCompletions.map((completion, index) => (
           <p key={index}>{completion}</p>
         ))}
       </div>

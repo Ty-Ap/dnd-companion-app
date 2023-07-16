@@ -22,7 +22,7 @@ const RandomEncounters = () => {
           {
             role: 'system',
             content:
-              'You are a DM. Provide concise, scalable encounters following the format of\n\nEncounter:\nDescription:\nObjective:\n;',
+              'You are a Dungeon Master or Game Master Assistant. Provide concise, scalable encounters following the format of \n \n Encounter: \n Description: \n Objective: \n ;',
           },
           {
             role: 'user',
@@ -58,6 +58,10 @@ const RandomEncounters = () => {
 
   return (
     <div>
+      <h1>Chat GPT DM Assistant</h1>
+      <p>enter a topic, ask a question etc below. <br/> 
+      NOTE: this functionality may become locked behind role based access control (RBAC) in a future update. Reason being, openAi API use is not free, and I can only keep the functionality public for as long as I have the means to pay usage fees. 
+      </p>
       <div>
         {chatCompletions.map((completion, index) => (
           <p key={index}>{completion}</p>
