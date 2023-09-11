@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const D4 = () => {
   const [rollResult, setRollResult] = useState('');
 
@@ -15,7 +16,7 @@ const D4 = () => {
           D4
         </button>
       </form>
-      {rollResult && <p>D4 Roll Result: {rollResult}</p>}
+      <span className="result">{rollResult && <p>{rollResult}</p>}</span>
     </div>
   );
 };

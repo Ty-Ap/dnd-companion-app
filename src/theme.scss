@@ -12,12 +12,14 @@
 }
 
 * text {
+  color: #28a586;
   white-space: pre-wrap;
 }
 
 body {
   min-height: 100vh;
   padding: 20px;
+  overflow-y: scroll;
   font-family: 'Roboto', sans-serif; 
 }
 
@@ -79,19 +81,8 @@ h1 {
   }
 }
 
-.button-dice {
-  text-decoration: none;
-  display: inline-block;
-  color:beige;
-  background-color: #333;
-  padding: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+/*THIS IS WHERE DICE STYLING PROBLEMS HAPPEN. REFACTOR*/
 
-  &:hover {
-    background-color: #555;
-  }
-}
 
 .character-sheet * {
   text-align: center;
@@ -148,20 +139,10 @@ h1 {
   color: #28a586;
 }
 
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.button-container button {
-  margin: 0 10px;
-}
 
 
-.Home {
-//   background-image: url('.././src/Assets/boy-standing-opened-giant-book.jpg');
-//   background-size: cover;
-//   background-position: center;
-// 
-}
+
+
+
+
+
