@@ -15,7 +15,7 @@ const D8 = () => {
           D8
         </button>
       </form>
-      {rollResult && <p> {rollResult}</p>}
+      <span className="result">{rollResult && <p>{rollResult}</p>}</span>
     </div>
   );
 };

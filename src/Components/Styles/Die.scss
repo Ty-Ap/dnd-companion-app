@@ -32,16 +32,16 @@
 //make a rattle animation for the Y coords ?//
 
 .button-dice {
-  text-decoration: none;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   color:beige;
   background-color: #333;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  color: #fff; 
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  margin: 5px;
   &:hover {
     background-color: #555;
   }
@@ -52,6 +52,10 @@
 
 }
 
+.result {
+  flex: 1; /* This will make the result take up remaining vertical space */
+  display: flex;
+}
 
 
 
