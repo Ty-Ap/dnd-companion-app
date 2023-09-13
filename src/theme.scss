@@ -81,63 +81,10 @@ h1 {
   }
 }
 
-/*THIS IS WHERE DICE STYLING PROBLEMS HAPPEN. REFACTOR*/
 
 
-.character-sheet * {
-  text-align: center;
-  color: #28a586;
-  background-color: #00201E;
-  padding: 20px;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
 
-.character-sheet form {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
 
-.character-sheet label {
-  display: block;
-  margin-bottom: .5rem;
-  text-align: left;
-}
-
-.character-sheet input,
-.character-sheet select {
-  flex: 1;
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  margin-top: 5px;
-  margin-right: 5px;
-  box-sizing: border-box;
-}
-
-.character-sheet button {
-  display: flex;
-  margin-top: 10px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #333;
-  color: beige;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: #555;
-  }
-}
-
-.character-sheet text {
-  color: #28a586;
-}
 
 
 

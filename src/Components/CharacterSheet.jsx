@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import jsPDF from 'jspdf';
+import '../../src/Components/Styles/Sheet.scss';
 
 const CharacterSheet = () => {
   const [characterData, setCharacterData] = useState({
@@ -58,8 +59,8 @@ const CharacterSheet = () => {
     <div className="character-sheet">
       <h1>D&D Character Sheet</h1>
       {/* got annoyed trying to center with scss so used whitespace preserve. will fix later */}
-      <text>                                                                                      Save Character saves Locally. To avoid conflicting data from multiple characters/sessions I recommend exporting to PDF.
-      </text>
+      <h3>Save Character saves Locally. To avoid conflicting data from multiple characters/sessions I recommend exporting to PDF.
+      </h3>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
@@ -149,6 +150,7 @@ const CharacterSheet = () => {
         </label>
         {/* could also use reset button type below instead of using handleClear function, but I prefer this for clarity. */}
         {/* moved buttons outside of form for styling */}
+        {/* need to add fields for feats/inventory/known spells etc */}
       </form>
       <div className="button-container">
       <button type="submit">Save Character</button>

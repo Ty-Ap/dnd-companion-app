@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../Styles/MonsterManual.scss';
 
 const Monsterbook = () => {
   const [monsterSearchQuery, setMonsterSearchQuery] = useState('');

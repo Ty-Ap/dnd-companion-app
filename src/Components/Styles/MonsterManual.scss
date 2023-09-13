@@ -1,0 +1,38 @@
+* {
+  text-align: center;
+  color: #28a586;
+  background-color: #00201E;
+  padding: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input {
+
+  flex: 1;
+  padding: 10px;
+  border: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #28a586;
+  margin-top: 5px;
+  margin-right: 5px;
+  box-sizing: border-box;
+
+}
+
+button {
+  box-sizing:inherit;
+  max-height: 3%;
+  max-width: 10%;
+  border-radius: 5px;
+  background-color: #333;
+  color: beige;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #555;
+  }
+}
