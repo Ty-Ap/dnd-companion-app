@@ -42,11 +42,15 @@
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  overflow: hidden;
   &:hover {
     background-color: #555;
+    transform: scale(1.20);
   }
   &:active {
     background-color: #28a586;
+    transform: scale(0.80);
     animation: shake 0.35s ease-in-out;
   }
 
