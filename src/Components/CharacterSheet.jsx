@@ -43,17 +43,54 @@ const CharacterSheet = () => {
   };
 
   const exportToPDF = () => {
-    const doc = new jsPDF();
+    const doc = new jsPDF('landscape');
+    
+    // Apply CSS styles to the PDF
+    doc.setFont('Roboto'); // Set the font-family to Roboto
+    doc.setFontSize(14); // Set the font size
+    doc.setTextColor(40, 165, 134); // Set the text color to #28a586
+    
+    doc.setFillColor(0, 224, 138); // Set the background color to #00E88A
+    
+    // Define a function to create a styled box
+    const createStyledBox = (x, y, width, height) => {
+      doc.setFillColor(0, 224, 138); // Set the background color to #00E88A
+      doc.rect(x, y, width, height, 'F'); // Draw a filled rectangle
+      doc.setTextColor(0);
+    };
   
-    doc.text('D&D Character Sheet', 10, 10);
-    doc.text(`Name: ${characterData.name}`, 10, 20);
-    doc.text(`Class: ${characterData.class}`, 10, 30);
-    doc.text(`Level: ${characterData.level}`, 10, 40);
-    doc.text(`Race: ${characterData.race}`, 10, 50);
-    doc.text(`Alignment: ${characterData.alignment}`, 10, 60);
+    // Create a styled header box
+    createStyledBox(0, 0, 297, 30);
+    doc.setFontSize(30);
+    doc.text('D&D Character Sheet', 150, 20, { align: 'center' });
   
+    // Create styled input fields for character information
+    const fieldWidth = 60;
+    const fieldHeight = 10;
+    const xOffset = 20;
+    const yOffset = 40;
+    const spacing = 10;
+  
+    // Create fields horizontally
+    const fields = [
+      { label: 'Name:', x: xOffset, y: yOffset },
+      { label: 'Class:', x: xOffset + fieldWidth + spacing, y: yOffset },
+      { label: 'Level:', x: xOffset + 2 * (fieldWidth + spacing), y: yOffset },
+      { label: 'Race:', x: xOffset + 3 * (fieldWidth + spacing), y: yOffset },
+      { label: 'Alignment:', x: xOffset + 4 * (fieldWidth + spacing), y: yOffset }
+    ];
+  
+    fields.forEach((field) => {
+      createStyledBox(field.x, field.y, fieldWidth, fieldHeight);
+      doc.text(field.label, field.x + 5, field.y + 7); // Adjust text position
+      doc.rect(field.x + fieldWidth + 5, field.y + 2, 50, fieldHeight - 4); // Input box for each field
+    });
+  
+    // Save the PDF
     doc.save('character_sheet.pdf');
   };
+  
+  
 
   return (
     <div className="character-sheet">
